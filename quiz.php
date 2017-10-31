@@ -19,16 +19,15 @@
         $quesno = $row['qno'];
         echo "$quesno";
        ?></p>
-        <input type="checkbox" value="<?php $row['option1']; ?>" name ="<?php echo "$quesno" ?>" id=""><?php $option1= $row['option1']; echo "$option1"?><br>
-        <input type="checkbox" value="<?php $row['option2']; ?>" name="<?php echo "$quesno" ?>" id=""><?php $option2= $row['option2']; echo "$option2"?><br>
-        <input type="checkbox" value="<?php $row['option3']; ?>" name="<?php echo "$quesno" ?>" id=""><?php $option3= $row['option3']; echo "$option3"?><br>
-        <input type="checkbox" value="<?php $row['option4']; ?>" name="<?php echo "$quesno" ?>"id=""><?php $option4= $row['option4']; echo "$option4"?><br>
+        
+        <input type="radio" value="<?php $row['option1']; ?>" name ="<?php echo "$quesno" ?>" id=""><?php $option1= $row['option1']; echo "$option1"?><br>
+        <input type="radio" value="<?php $row['option2']; ?>" name="<?php echo "$quesno" ?>" id=""><?php $option2= $row['option2']; echo "$option2"?><br>
+        <input type="radio" value="<?php $row['option3']; ?>" name="<?php echo "$quesno" ?>" id=""><?php $option3= $row['option3']; echo "$option3"?><br>
+        <input type="radio" value="<?php $row['option4']; ?>" name="<?php echo "$quesno" ?>"id=""><?php $option4= $row['option4']; echo "$option4"?><br>
         
     <?php 
-    
     }
-    
-     }
+        }
         else{
                 echo "no result";
             }?>
