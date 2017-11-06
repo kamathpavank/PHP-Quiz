@@ -3,8 +3,17 @@
 ?>
 
 <?php
-echo $_POST["1"];
-echo $_POST["2"];
+$count = 0;
+$i=1;
+$sql = "SELECT answer FROM quiz";
+$result = $conn->query($sql);
+while($row = $result->fetch_assoc()) { 
+	
+	if($_POST[$i] == $row['answer']){
+		$count++;	
+	}
+	$i++;
+}
 
-echo $_POST["4"];
+echo "Total scroe is = $count";
 ?>
