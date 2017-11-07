@@ -6,8 +6,8 @@ require("connect.php");
 require("header.php");
 ?>
 
-<div style="text-align: center;">
-    <h1>QUIZ</h1>
+<div>
+    <h1 style="text-align: center;">QUIZ</h1>
     <?php
     $sql = "SELECT * FROM quiz";
     $result = $conn->query($sql);

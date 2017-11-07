@@ -14,12 +14,21 @@
 }
 
 input[type=submit]{
+	margin-left: 150px;
 	width: 20%;
 	height: 20%;
 	font-size: 30px;
 	background-color: #e7e7e7;
 	border-radius: 20px;
+	border: 2px solid black;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
+
+input[type=submit]:hover{
+	background-color: white;
+}
+
+
 </style>
 </head>
 
