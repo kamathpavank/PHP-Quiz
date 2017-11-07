@@ -27,10 +27,13 @@ while($row = $result->fetch_assoc()) {
 ?>
 
 <div class="container">
-	<div class="jumbotron">
-		<h1>RESULT</h1>
+	<div class="jumbotron" style="text-align: center">
+		<h1 >RESULT</h1>
+		<br>
 		<h2>TOTAL QUESTION ATTEMPTED = <?php echo "$numberofquestons"; ?></h2>
+		<br>
 		<hr>
+		<br>
 		<h2>TOTAL SCORE = <?php echo "$count"; ?></h2>
 	</div>
 	
