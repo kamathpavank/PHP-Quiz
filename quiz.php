@@ -2,7 +2,12 @@
 require("connect.php");
 ?>
 
-<div>
+<?php
+require("header.php");
+?>
+
+<div style="text-align: center;">
+    <h1>QUIZ</h1>
     <?php
     $sql = "SELECT * FROM quiz";
     $result = $conn->query($sql);
@@ -13,16 +18,18 @@ require("connect.php");
             $count = 0;
             // output data of each row
             while($row = $result->fetch_assoc()) { 
-                ?>
+         ?>
+    <!--Questions -->               
+        <div class="container">
+            <div class="jumbotron">
                 <p>
                     <?php 
-                    $quesno = $row['qno'];
-                    echo "$quesno]   ";
-                    $question = $row['question'];
-                    echo "$question" ;
+                        $quesno = $row['qno'];
+                        echo "$quesno]   ";
+                        $question = $row['question'];
+                        echo "$question" ;
                     ?>
                 </p>
-
                 <input type="radio" value="<?php echo $row['option1']; ?>" name ="<?php echo "$quesno" ?>" id="">
                 <?php $option1= $row['option1']; echo "$option1"?>
                 <br>
@@ -35,7 +42,9 @@ require("connect.php");
                 <input type="radio" value="<?php echo $row['option4']; ?>" name="<?php echo "$quesno" ?>"id="">
                 <?php $option4= $row['option4']; echo "$option4"?>
                 <br>
-
+            </div>
+        </div>
+                
                 <?php 
                         }
                     }
@@ -43,6 +52,7 @@ require("connect.php");
                         echo "no result";
                     }
                 ?>
+
         <input type="submit" value="Submit">
     </form>
 </div>
