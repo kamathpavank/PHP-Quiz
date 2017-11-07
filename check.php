@@ -3,11 +3,20 @@
 ?>
 
 <?php
+require("header.php");
+?>
+
+<?php
 $count = 0;
+$numberofquestons = 0;
 $i=1;
 $sql = "SELECT answer FROM quiz";
 $result = $conn->query($sql);
 while($row = $result->fetch_assoc()) { 
+
+	if(isset($_POST[$i])){
+		$numberofquestons++;
+	}
 	
 	if($_POST[$i] == $row['answer']){
 		$count++;	
@@ -15,5 +24,14 @@ while($row = $result->fetch_assoc()) {
 	$i++;
 }
 
-echo "Total scroe is = $count";
 ?>
+
+<div class="container">
+	<div class="jumbotron">
+		<h1>RESULT</h1>
+		<h2>TOTAL QUESTION ATTEMPTED = <?php echo "$numberofquestons"; ?></h2>
+		<hr>
+		<h2>TOTAL SCORE = <?php echo "$count"; ?></h2>
+	</div>
+	
+</div>
